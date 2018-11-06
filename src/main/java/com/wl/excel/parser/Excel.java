@@ -1,4 +1,4 @@
-package cn.ijiami.framework.excel.parser;
+package com.wl.excel.parser;
 
 import java.lang.annotation.*;
 

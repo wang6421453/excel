@@ -1,4 +1,4 @@
-package cn.ijiami.framework.excel.constants;
+package com.wl.excel.constants;
 
 /**
  * 类型名称常量

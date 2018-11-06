@@ -1,6 +1,7 @@
-package cn.ijiami.framework.excel.manager;
+package com.wl.excel.manager;
 
-import cn.ijiami.framework.excel.parser.ExcelParser;
+import com.wl.excel.parser.ExcelParser;
+
 import java.util.List;
 
 /**

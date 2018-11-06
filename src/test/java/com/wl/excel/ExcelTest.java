@@ -1,7 +1,7 @@
-package cn.ijiami.framework.excel;
+package com.wl.excel;
 
-import cn.ijiami.framework.excel.manager.ExcelContext;
-import cn.ijiami.framework.excel.manager.ExcelManager;
+import com.wl.excel.manager.ExcelContext;
+import com.wl.excel.manager.ExcelManager;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -23,7 +23,7 @@ public class ExcelTest {
             System.out.println(v.getUserName() + "  " + v.getAge() + "  " + v.getSex());
         }
 
-        List<ExportVo> lstExport = new ArrayList<>();
+        List<ExportVo> lstExport = new ArrayList<ExportVo>();
         for(int i = 0; i < 10; i++){
             ExportVo vo = new ExportVo();
             vo.setUserName("w" + i);

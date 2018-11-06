@@ -1,4 +1,4 @@
-package cn.ijiami.framework.excel.manager;
+package com.wl.excel.manager;
 
 import java.util.List;
 

@@ -1,11 +1,11 @@
-package cn.ijiami.framework.excel.parser;
+package com.wl.excel.parser;
 
-import cn.ijiami.framework.excel.constants.TypeConstants;
-import cn.ijiami.framework.excel.manager.ExcelContext;
-import cn.ijiami.framework.excel.manager.ExcelField;
+import com.wl.excel.constants.TypeConstants;
+import com.wl.excel.exception.ExcelImportException;
+import com.wl.excel.manager.ExcelContext;
+import com.wl.excel.manager.ExcelField;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.poi.ss.usermodel.*;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -40,7 +40,7 @@ public class ExcelParser {
 
 
 		//解析field
-		List<ExcelField> lstField = new ArrayList<>();
+		List<ExcelField> lstField = new ArrayList<ExcelField>();
 		Field[] fields = clazz.getDeclaredFields();
 		for(Field filed : fields){
 			ExcelColumn excelColumn = filed.getAnnotation(ExcelColumn.class);
@@ -88,7 +88,11 @@ public class ExcelParser {
 				Cell cell = row.getCell(columnIndex);
 				String fieldName = excelField.getFieldName();
 				Field field = clazz.getDeclaredField(fieldName);
-				setFieldValue(field, cell, obj);
+				try{
+					setFieldValue(field, cell, obj);
+				}catch (Exception e){
+					throw new ExcelImportException("第" + (rowIndex + 1) + "行数据异常");
+				}
 			}
 			list.add(obj);
 		}

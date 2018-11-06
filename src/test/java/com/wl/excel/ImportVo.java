@@ -1,7 +1,7 @@
-package cn.ijiami.framework.excel;
+package com.wl.excel;
 
-import cn.ijiami.framework.excel.parser.Excel;
-import cn.ijiami.framework.excel.parser.ExcelColumn;
+import com.wl.excel.parser.Excel;
+import com.wl.excel.parser.ExcelColumn;
 
 /**
  * 测试vo
